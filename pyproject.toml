@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "flask-sample"
+version = "0.1.0"
+description = ""
+authors = ["negi524 <egtnrumpbiizarre.info@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+Flask = "^3.0.2"
+
+[tool.poetry.group.dev.dependencies]
+mypy = "^1.8.0"
+black = "^24.1.1"
+pytest = "^8.0.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
