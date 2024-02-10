@@ -1,2 +1,2 @@
 main:
-	poetry run python main.py
+	poetry run flask --app app run
