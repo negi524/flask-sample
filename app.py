@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 import logging
 import logging.config
 import yaml
@@ -18,9 +18,9 @@ def hello_world():
     return response
 
 
-@app.route("/user/<username>")
+@app.route("/user/<username>/")
 def show_user_name(username: str):
-    return {"userName": username, "message": f"Hello, {username}"}
+    return render_template("hello.html", userName=username)
 
 
 @app.route("/about/")
