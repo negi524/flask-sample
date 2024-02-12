@@ -16,3 +16,13 @@ with open("./logsetting.yml", "r") as file:
 def hello_world():
     app.logger.info("info log.")
     return response
+
+
+@app.route("/user/<username>")
+def show_user_name(username: str):
+    return {"userName": username, "message": f"Hello, {username}"}
+
+
+@app.route("/about/")
+def show_about_page():
+    return {"pageName": "about"}
