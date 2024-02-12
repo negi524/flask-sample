@@ -1,5 +1,9 @@
+name: deploy
+on: [push]
+
 jobs:
   job_id:
+    runs-on: ubuntu-latest
     permissions:
       contents: 'read'
       id-token: 'write'
@@ -13,6 +17,9 @@ jobs:
 
     - id: 'deploy'
       uses: 'google-github-actions/deploy-appengine@v2'
+      with:
+        project_id: ${{ secrets.GCP_PROJECT_ID }}
+        deliverables: app.yaml
 
     # Example of using the output
     - id: 'test'
